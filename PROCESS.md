@@ -36,3 +36,25 @@ logarithmic magnitude scale, while negative depth can describe an event located
 above the reference surface used by the feed. The first plot is a diagnostic
 scatter plot, not the final artwork. It establishes what the data actually looks
 like before visual styling begins.
+
+## Developing the seismic score
+
+The first scatter plot repeated depth only as colour and placed magnitude on a
+conventional vertical axis. I rejected it as the final image because it described
+the dataset without making a strong visual decision, and because 11,087 marks
+gave disproportionate visual weight to microearthquakes detected by dense local
+networks.
+
+I kept the complete raw file but filtered the picture to 2,069 events of
+magnitude 2.5 or greater. The revision maps time horizontally, depth vertically
+and magnitude to circle area. A faint stem joins the reference surface to each
+hypocentre, making reported depth readable without relying on colour alone. I
+also kept a list of the six strongest events so that the largest marks retain a
+place and date even though the main image deliberately removes geography.
+
+The first attempt at the stem layer failed because Matplotlib's `LineCollection`
+does not accept `datetime` objects even though `scatter` does. I corrected the
+representation by converting every timestamp once with `matplotlib.dates.date2num`
+and then using the same numeric coordinates for both layers. I kept this explicit
+conversion rather than hiding it inside plotting calls because it makes the
+coordinate transformation inspectable.

@@ -5,11 +5,10 @@
 ## The phenomenon
 
 Earthquakes make the planet's internal movement briefly measurable at the
-surface. I am interested in the contrast between the calm appearance of a world
-map and the continuous sequence of ruptures recorded underneath it. This project
-will turn thirty days of global earthquake observations into a visual rhythm,
-with each event treated as both a measured occurrence and a mark left by the
-moving Earth.
+surface. I am interested in the contrast between the calm appearance of the
+ground and the continuous sequence of ruptures recorded underneath it. This
+project turns thirty days of observations into a seismic score, with each event
+treated as both a measurement and a mark left by the moving Earth.
 
 ## The source
 
@@ -22,13 +21,17 @@ latitude, depth in kilometres and magnitude.
 
 ## What the picture shows
 
-The first plot is deliberately provisional: horizontal position shows event
-time, vertical position shows magnitude, circle size repeats magnitude and colour
-shows depth. It reveals the density of small recorded events and the relative
-rarity of the strongest ones, while testing whether time, magnitude and depth can
-form a legible visual pulse. It hides geographic position, measurement
-uncertainty, felt reports and geological mechanism, so it must not be read as a
-complete account of earthquake distribution or risk.
+The picture retains the 2,069 events of magnitude 2.5 or greater. Time runs from
+left to right, every vertical stem ends at the event's reported depth, circle
+size represents magnitude, and colour reinforces depth. The threshold reduces
+the visual and regional bias produced by thousands of locally detected
+microearthquakes, but does not remove differences in monitoring coverage.
+
+The score shows a continuous field of mostly shallow events punctuated by a few
+large or unusually deep shocks. It deliberately hides longitude and latitude so
+that time and depth become the main structure. It also omits uncertainty, felt
+reports and geological mechanism; consequently, it is not a map of earthquake
+risk or a complete record of everything the Earth did.
 
 ## Run it
 
