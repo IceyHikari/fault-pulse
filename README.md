@@ -1,30 +1,32 @@
-# The phenomenon
-
-<!-- This is the SD5913 assignment 2 template. Everything in this file is yours to
-replace, and the check counts words: comments like this one are not words, so
-delete each one as you write. Start with the heading: name the phenomenon.
-
-Then, in this order, at least 150 words in total.
-
-New to folders, paths, or the files here whose names start with a dot? Read
-https://github.com/sd5913/pfad/blob/2026/reference/files.md first. Ten minutes. -->
+# Fault Pulse
 
 ![what the picture is](out/plot.png)
 
 ## The phenomenon
 
-<!-- What goes up and down, and why you looked at it. -->
+Earthquakes make the planet's internal movement briefly measurable at the
+surface. I am interested in the contrast between the calm appearance of a world
+map and the continuous sequence of ruptures recorded underneath it. This project
+will turn thirty days of global earthquake observations into a visual rhythm,
+with each event treated as both a measured occurrence and a mark left by the
+moving Earth.
 
 ## The source
 
-<!-- A link to the page or endpoint the file came from, and one line on what is in
-the file: how many rows, what a row means, what the units are. -->
+The raw data comes from the
+[United States Geological Survey earthquake feed](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+The repository stores one unchanged GeoJSON snapshot from the USGS feed for all
+earthquakes recorded during the preceding thirty days. Each feature represents
+one recorded event and includes its time, longitude, latitude, depth in
+kilometres and magnitude.
 
 ## What the picture shows
 
-<!-- Two or three sentences. Including what it hides: every transformation throws
-something away, and naming what yours threw away is the easiest way to sound like
-you know what you did. -->
+The first plot is deliberately provisional. It will test whether time, magnitude
+and depth can form a legible visual pulse before the final artistic treatment is
+chosen. The image will not reproduce every field in the USGS record: uncertainty,
+felt reports and geological mechanism are outside its scope, so it must not be
+read as a complete account of earthquake risk.
 
 ## Run it
 

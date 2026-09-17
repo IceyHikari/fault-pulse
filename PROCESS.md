@@ -1,15 +1,30 @@
 # Process
 
-<!-- Same as assignment 1, same honesty. Which tools you used and for what; one
-thing you kept and why it was good; one thing you rejected and why it was wrong.
-"I did not use any" is fine if it is true.
-
-If a model wrote most of plot.py, which is likely and allowed, the interesting part
-is what you had to correct: did it invent a column name, use pandas where a list
-would do, silently drop the rows it could not parse? -->
-
 ## Tools
+
+I used Codex to read the assignment specification, compare possible public data
+sources and prepare the repository from the official course template. I retained
+responsibility for the phenomenon, the visual argument and every decision about
+what the transformation should reveal or omit.
 
 ## Kept
 
+I kept the suggestion to use the official USGS thirty-day GeoJSON feed. It is a
+public, machine-readable source that requires no account or API key, and its
+event-level fields support both an informative and an artistic interpretation.
+
 ## Rejected
+
+I rejected a conventional weather line chart. It would satisfy the file and code
+requirements, but it would not yet connect the assignment to my interest in
+expressive systems and art direction. I also rejected fetching live data every
+time the plot runs because that would make the result irreproducible and would
+break the assignment's offline requirement.
+
+## 17 September 2026 — choosing the material
+
+I created the repository from the official template and replaced the example
+temperature source with the USGS earthquake feed. At this stage the visual form
+is intentionally unresolved. The next test is a rough plot that checks the real
+range and density of the data before I decide how much geographic structure the
+finished image needs.
