@@ -28,3 +28,11 @@ temperature source with the USGS earthquake feed. At this stage the visual form
 is intentionally unresolved. The next test is a rough plot that checks the real
 range and density of the data before I decide how much geographic structure the
 finished image needs.
+
+The frozen snapshot contained 11,087 events, with magnitudes from -1.25 to 6.7
+and reported depths from -3.48 to 628.976 kilometres. I kept negative values
+rather than silently discarding them: negative magnitude is valid on the
+logarithmic magnitude scale, while negative depth can describe an event located
+above the reference surface used by the feed. The first plot is a diagnostic
+scatter plot, not the final artwork. It establishes what the data actually looks
+like before visual styling begins.

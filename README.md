@@ -15,18 +15,20 @@ moving Earth.
 
 The raw data comes from the
 [United States Geological Survey earthquake feed](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
-The repository stores one unchanged GeoJSON snapshot from the USGS feed for all
-earthquakes recorded during the preceding thirty days. Each feature represents
-one recorded event and includes its time, longitude, latitude, depth in
-kilometres and magnitude.
+The repository stores one unchanged GeoJSON snapshot generated on 17 September
+2026. It contains 11,087 events recorded from 18 August to 17 September 2026.
+Each feature represents one recorded event and includes its time, longitude,
+latitude, depth in kilometres and magnitude.
 
 ## What the picture shows
 
-The first plot is deliberately provisional. It will test whether time, magnitude
-and depth can form a legible visual pulse before the final artistic treatment is
-chosen. The image will not reproduce every field in the USGS record: uncertainty,
-felt reports and geological mechanism are outside its scope, so it must not be
-read as a complete account of earthquake risk.
+The first plot is deliberately provisional: horizontal position shows event
+time, vertical position shows magnitude, circle size repeats magnitude and colour
+shows depth. It reveals the density of small recorded events and the relative
+rarity of the strongest ones, while testing whether time, magnitude and depth can
+form a legible visual pulse. It hides geographic position, measurement
+uncertainty, felt reports and geological mechanism, so it must not be read as a
+complete account of earthquake distribution or risk.
 
 ## Run it
 
