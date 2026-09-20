@@ -12,12 +12,13 @@ treated as both a measurement and a mark left by the moving Earth.
 
 ## The source
 
-The raw data comes from the
-[United States Geological Survey earthquake feed](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
-The repository stores one unchanged GeoJSON snapshot generated on 17 September
-2026. It contains 11,087 events recorded from 18 August to 17 September 2026.
-Each feature represents one recorded event and includes its time, longitude,
-latitude, depth in kilometres and magnitude.
+The raw data comes from the United States Geological Survey's
+[all-earthquakes monthly GeoJSON endpoint](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson),
+documented on the [USGS earthquake feed page](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+The repository stores one unchanged snapshot fetched on 17 September 2026. It
+contains 11,087 events recorded from 18 August to 17 September 2026. Each
+feature represents one recorded event and includes its time, longitude,
+latitude, reported depth in kilometres and magnitude.
 
 ## What the picture shows
 
@@ -36,6 +37,5 @@ risk or a complete record of everything the Earth did.
 ## Run it
 
 ```
-uv run fetch.py
 uv run plot.py
 ```

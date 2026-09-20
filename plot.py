@@ -38,7 +38,7 @@ def load_events(path, minimum_magnitude):
             {
                 "time": event_time,
                 "magnitude": float(magnitude),
-                "depth": max(0.0, float(coordinates[2])),
+                "depth": float(coordinates[2]),
                 "place": feature["properties"]["place"] or "Unnamed location",
             }
         )
@@ -62,7 +62,9 @@ def main():
     ax.set_facecolor("#071018")
 
     stems = [[(time, 0), (time, depth)] for time, depth in zip(time_numbers, depths)]
-    stem_colours = [plt.cm.cividis_r(min(depth, 600) / 600) for depth in depths]
+    stem_colours = [
+        plt.cm.cividis_r(max(0, min(depth, 600)) / 600) for depth in depths
+    ]
     ax.add_collection(
         LineCollection(stems, colors=stem_colours, linewidths=0.45, alpha=0.18)
     )

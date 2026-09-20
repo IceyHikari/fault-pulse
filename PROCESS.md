@@ -68,3 +68,19 @@ events, the magnitude key and the depth scale. This reduces the width of the
 time field slightly, but no longer covers any earthquake marks. I kept the dark
 seismic-score treatment because the redundant depth encodings—vertical position,
 stem length and colour—remain legible even when the colour difference is subtle.
+
+## 20 September 2026 — checking fidelity and reproducibility
+
+I compared the repository with the assignment brief rather than treating a
+passing automated check as evidence of picture quality. I removed `uv run
+fetch.py` from the reproduction instructions because the unchanged source
+snapshot is already committed; reproducing the picture requires only `uv run
+plot.py`. I also replaced the general feed link with the exact endpoint while
+retaining the documentation link.
+
+The plotting script had silently clamped six qualifying negative reported
+depths to zero. I rejected that convenience because it changed the source
+values while the picture claimed to show reported depth. The revised script
+keeps those values in their true plotted positions. Their colours remain at
+the shallow end of the scale, so the correction improves fidelity without
+inventing a separate visual category for a very small edge case.
