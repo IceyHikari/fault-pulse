@@ -58,3 +58,13 @@ representation by converting every timestamp once with `matplotlib.dates.date2nu
 and then using the same numeric coordinates for both layers. I kept this explicit
 conversion rather than hiding it inside plotting calls because it makes the
 coordinate transformation inspectable.
+
+## 20 September 2026 — separating evidence from annotation
+
+I reviewed the rendered poster at full size and found that the strongest-event
+box obscured part of the evidence it was meant to explain. I rejected the
+overlay layout and reserved a separate right-hand column for the six strongest
+events, the magnitude key and the depth scale. This reduces the width of the
+time field slightly, but no longer covers any earthquake marks. I kept the dark
+seismic-score treatment because the redundant depth encodings—vertical position,
+stem length and colour—remain legible even when the colour difference is subtle.

@@ -116,16 +116,15 @@ def main():
         color="#c3d0d7",
         va="bottom",
     )
-    ax.text(
-        0.73,
-        0.985,
+    fig.text(
+        0.765,
+        0.84,
         "\n".join(summary),
-        transform=ax.transAxes,
         fontsize=9.5,
         color="#dce5e9",
         va="top",
         linespacing=1.55,
-        bbox={"facecolor": "#071018", "edgecolor": "#42535d", "alpha": 0.9, "pad": 9},
+        bbox={"facecolor": "#071018", "edgecolor": "#42535d", "alpha": 1.0, "pad": 9},
     )
 
     ax.grid(axis="y", color="#6d7d86", linewidth=0.5, alpha=0.2)
@@ -133,12 +132,14 @@ def main():
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.spines["bottom"].set_color("#42535d")
     ax.tick_params(colors="#9eafb9")
-    colour_key = fig.colorbar(points, ax=ax, pad=0.015, fraction=0.022)
+    colour_axis = fig.add_axes([0.945, 0.18, 0.012, 0.42])
+    colour_key = fig.colorbar(points, cax=colour_axis)
     colour_key.set_label("DEPTH · KM", color="#9eafb9", labelpad=12)
     colour_key.ax.tick_params(colors="#9eafb9")
 
+    magnitude_handles = []
     for magnitude in (3.0, 5.0, 6.5):
-        ax.scatter(
+        handle = ax.scatter(
             [], [],
             s=5 + (magnitude - MIN_MAGNITUDE + 0.25) ** 3 * 7,
             facecolors="none",
@@ -146,9 +147,12 @@ def main():
             linewidths=0.8,
             label=f"M{magnitude:g}",
         )
-    legend = ax.legend(
+        magnitude_handles.append(handle)
+    legend = fig.legend(
+        handles=magnitude_handles,
         title="MAGNITUDE",
-        loc="lower right",
+        loc="lower left",
+        bbox_to_anchor=(0.755, 0.17),
         frameon=False,
         labelcolor="#dce5e9",
     )
@@ -161,7 +165,7 @@ def main():
         color="#71838d",
         fontsize=8.5,
     )
-    fig.tight_layout(rect=(0.01, 0.035, 0.99, 0.98))
+    fig.subplots_adjust(left=0.07, right=0.735, bottom=0.12, top=0.88)
 
     OUT.mkdir(exist_ok=True)
     fig.savefig(OUT / PICTURE, dpi=180)
