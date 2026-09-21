@@ -84,3 +84,18 @@ values while the picture claimed to show reported depth. The revised script
 keeps those values in their true plotted positions. Their colours remain at
 the shallow end of the scale, so the correction improves fidelity without
 inventing a separate visual category for a very small edge case.
+
+## 21 September 2026 — making the evidence auditable
+
+I checked the README field descriptions against the USGS GeoJSON documentation
+and made the units explicit rather than assuming that a reader would infer them
+from the code. I also replaced the placeholder image description with alt text
+that identifies the three visual variables. These changes do not decorate the
+project; they make its evidence easier to inspect and the picture more
+accessible.
+
+The earlier colour scale stopped at 600 km even though the snapshot contains a
+qualifying event at 628.98 km. I rejected that rounded limit and extended the
+scale to 650 km so the deepest event is represented within the stated key. I
+also renamed the vertical axis from “depth below” to “depth relative to” the
+reference surface, because the six retained negative values appear above zero.

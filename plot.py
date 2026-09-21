@@ -16,6 +16,7 @@ from matplotlib.collections import LineCollection
 FILE = "usgs-earthquakes-past-30-days.geojson"
 PICTURE = "plot.png"
 MIN_MAGNITUDE = 2.5
+DEPTH_COLOUR_MAX = 650
 
 HERE = Path(__file__).parent
 DATA = HERE / "data" / FILE
@@ -63,7 +64,8 @@ def main():
 
     stems = [[(time, 0), (time, depth)] for time, depth in zip(time_numbers, depths)]
     stem_colours = [
-        plt.cm.cividis_r(max(0, min(depth, 600)) / 600) for depth in depths
+        plt.cm.cividis_r(max(0, min(depth, DEPTH_COLOUR_MAX)) / DEPTH_COLOUR_MAX)
+        for depth in depths
     ]
     ax.add_collection(
         LineCollection(stems, colors=stem_colours, linewidths=0.45, alpha=0.18)
@@ -77,7 +79,7 @@ def main():
         c=depths,
         cmap="cividis_r",
         vmin=0,
-        vmax=600,
+        vmax=DEPTH_COLOUR_MAX,
         alpha=0.78,
         linewidths=0.2,
         edgecolors="#e7f0f4",
@@ -100,7 +102,7 @@ def main():
     ax.xaxis.set_major_locator(mdates.AutoDateLocator(minticks=5, maxticks=9))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%d %b"))
     ax.set_xlabel("THIRTY DAYS OF RECORDED TIME · UTC", color="#9eafb9", labelpad=14)
-    ax.set_ylabel("DEPTH BELOW THE REFERENCE SURFACE · KM", color="#9eafb9", labelpad=14)
+    ax.set_ylabel("REPORTED DEPTH RELATIVE TO REFERENCE · KM", color="#9eafb9", labelpad=14)
     ax.set_title(
         "FAULT PULSE",
         loc="left",
@@ -171,6 +173,7 @@ def main():
 
     OUT.mkdir(exist_ok=True)
     fig.savefig(OUT / PICTURE, dpi=180)
+    plt.close(fig)
     print(f"saved out/{PICTURE}")
 
 
