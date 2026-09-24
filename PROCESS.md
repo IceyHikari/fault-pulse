@@ -99,3 +99,16 @@ qualifying event at 628.98 km. I rejected that rounded limit and extended the
 scale to 650 km so the deepest event is represented within the stated key. I
 also renamed the vertical axis from “depth below” to “depth relative to” the
 reference surface, because the six retained negative values appear above zero.
+
+## 24 September 2026 — separating earthquakes from other events
+
+I audited the values behind the finished labels rather than relying on the
+repository check. The USGS `all_month` feed contained several event types, and
+the magnitude threshold retained 2,067 earthquakes together with two Nepal
+landslides. The earlier picture incorrectly called all 2,069 marks earthquakes.
+
+I rejected changing the title to the vague word “events” because the project is
+specifically about earthquakes. Instead, I added an explicit `type ==
+"earthquake"` condition, regenerated the picture and updated the documented
+count. The raw GeoJSON remains unchanged: classification happens only in the
+plotting transformation, where it can be read and challenged.

@@ -24,13 +24,15 @@ value, with its scale identified separately by `magType`.
 
 ## What the picture shows
 
-The picture retains the 2,069 events of magnitude 2.5 or greater. Time runs from
-left to right, every vertical stem ends at the event's reported depth, circle
-size represents magnitude, and colour reinforces depth. The threshold reduces
-the visual and regional bias produced by thousands of locally detected
+The picture retains the 2,067 records classified by USGS as earthquakes with a
+magnitude of 2.5 or greater. Two landslide records above the magnitude threshold
+are excluded rather than being labelled as earthquakes. Time runs from left to
+right, every vertical stem ends at the event's reported depth, circle size
+represents magnitude, and colour reinforces depth. The threshold reduces the
+visual and regional bias produced by thousands of locally detected
 microearthquakes, but does not remove differences in monitoring coverage. Six
-qualifying events have small negative reported depths and therefore sit just
-above the zero reference line rather than being silently changed.
+qualifying earthquakes have small negative reported depths and therefore sit
+just above the zero reference line rather than being silently changed.
 
 The score shows a continuous field of mostly shallow events punctuated by a few
 large or unusually deep shocks. It deliberately hides longitude and latitude so

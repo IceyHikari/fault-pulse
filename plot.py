@@ -24,23 +24,29 @@ OUT = HERE / "out"
 
 
 def load_events(path, minimum_magnitude):
-    """Return the fields used by the picture for each qualifying event."""
+    """Return the fields used by the picture for each qualifying earthquake."""
     document = json.loads(path.read_text(encoding="utf-8"))
     events = []
     for feature in document["features"]:
-        magnitude = feature["properties"]["mag"]
+        properties = feature["properties"]
+        magnitude = properties["mag"]
         coordinates = feature["geometry"]["coordinates"]
-        if magnitude is None or magnitude < minimum_magnitude or len(coordinates) < 3:
+        if (
+            properties.get("type") != "earthquake"
+            or magnitude is None
+            or magnitude < minimum_magnitude
+            or len(coordinates) < 3
+        ):
             continue
         event_time = datetime.fromtimestamp(
-            feature["properties"]["time"] / 1000, tz=timezone.utc
+            properties["time"] / 1000, tz=timezone.utc
         )
         events.append(
             {
                 "time": event_time,
                 "magnitude": float(magnitude),
                 "depth": float(coordinates[2]),
-                "place": feature["properties"]["place"] or "Unnamed location",
+                "place": properties["place"] or "Unnamed location",
             }
         )
     return events
@@ -114,7 +120,7 @@ def main():
     ax.text(
         0,
         1.025,
-        "2,069 EARTHQUAKES OF MAGNITUDE 2.5+ · 18 AUG—17 SEP 2026",
+        "2,067 EARTHQUAKES OF MAGNITUDE 2.5+ · 18 AUG—17 SEP 2026",
         transform=ax.transAxes,
         fontsize=11,
         color="#c3d0d7",
