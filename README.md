@@ -42,6 +42,21 @@ risk or a complete record of everything the Earth did.
 
 ## Run it
 
-```
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and Git,
+then clone the repository so the cached data is available alongside the script:
+
+```sh
+git clone https://github.com/IceyHikari/fault-pulse.git
+cd fault-pulse
 uv run plot.py
 ```
+
+The script declares Python 3.10 or newer and Matplotlib in its inline metadata.
+uv manages the script environment and installs its declared dependency; the
+first run may require internet access to obtain Python and packages.
+
+The plot reads `data/usgs-earthquakes-past-30-days.geojson` from this checkout,
+rather than downloading a new feed. It creates `out/plot.png`, overwriting that
+image if it already exists. Open the PNG after the command finishes; no plot
+window is opened. Keeping the bundled snapshot preserves the time period
+described above.
